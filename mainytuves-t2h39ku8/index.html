@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mainytuvės Stakliškėse – lapkričio 20 d.</title>
+  <meta name="description" content="Mainytuvės Stakliškėse: iki lapkričio 6 d. neškite nenaudojamus geros būklės daiktus ir rūbus, o lapkričio 20 d. – mainykitės! Suteikime antrą šansą daiktams.">
+  <meta name="theme-color" content="#f1e8d8">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f1e8d8; --paper-2:#e9dcc4; --card:#f8f2e6;
+      --olive:#5f6f3c; --olive-dark:#45522a; --olive-soft:#869659;
+      --brown:#8b5a2b; --tan:#c48a4a; --sand:#d9b98a;
+      --ink:#4a3a28; --ink-soft:#6f5d47; --gold:#f0c96e;
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth; overflow-x:clip}
+    body{
+      margin:0; color:var(--ink); font:400 17px/1.65 "Nunito",system-ui,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #f7efe0 0%, transparent 60%),
+        radial-gradient(900px 500px at 110% 30%, #ebdfc8 0%, transparent 60%),
+        var(--paper);
+      overflow-x:hidden;
+    }
+    body::before{ /* popieriaus tekstūra */
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.35;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .35 0 0 0 0 .2 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    main,footer{position:relative; z-index:1}
+    h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif; line-height:1.1; margin:0}
+    a{color:inherit}
+    .wrap{width:min(1120px,100% - 32px); margin-inline:auto}
+    .hand{font-family:"Caveat",cursive; font-weight:700}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+    /* ---------- HERO plakatas ---------- */
+    .hero{padding:10px 0 40px}
+    .poster{
+      position:relative; background:var(--card); border-radius:10px;
+      padding:clamp(28px,5vw,64px) clamp(16px,4vw,56px) clamp(32px,5vw,56px);
+      text-align:center; isolation:isolate;
+      box-shadow:0 30px 60px -30px rgba(74,58,40,.45);
+    }
+    .poster::before{ /* ranka pieštas rėmelis */
+      content:""; position:absolute; inset:12px; border:7px solid var(--olive); border-radius:6px;
+      filter:url(#rough); pointer-events:none; z-index:-1;
+    }
+    .branch{position:absolute; width:clamp(70px,11vw,130px); color:var(--olive); transform-origin:50% 100%; animation:sway 6s ease-in-out infinite; pointer-events:none}
+    .branch--tl{top:-14px; left:-6px; transform:rotate(-28deg); animation-name:swayL}
+    .branch--tr{top:28%; right:-10px; transform:rotate(18deg) scaleX(-1); animation-delay:-2s; animation-name:swayR}
+    .branch--bl{bottom:-10px; left:-10px; transform:rotate(-8deg); animation-delay:-4s; animation-name:swayB}
+    @keyframes swayL{0%,100%{transform:rotate(-28deg)}50%{transform:rotate(-20deg)}}
+    @keyframes swayR{0%,100%{transform:rotate(18deg) scaleX(-1)}50%{transform:rotate(10deg) scaleX(-1)}}
+    @keyframes swayB{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(-1deg)}}
+
+    .sparks{display:block; width:60px; margin:0 auto 4px; color:var(--brown)}
+    .sparks path{stroke-dasharray:20; stroke-dashoffset:20; animation:draw .8s .9s ease forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+
+    .title{
+      font-weight:800; color:var(--brown); letter-spacing:.04em;
+      font-size:clamp(2.6rem,10.5vw,7.2rem); line-height:1; margin:0 0 .25em;
+      display:flex; justify-content:center; flex-wrap:nowrap;
+    }
+    .title span{
+      display:inline-block; --y:0em; --r:0deg;
+      transform:translateY(var(--y)) rotate(var(--r));
+      animation:drop .7s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(var(--i) * 60ms);
+    }
+    @keyframes drop{from{opacity:0; transform:translateY(-1.2em) rotate(-20deg)}}
+
+    .ribbon{
+      display:inline-block; position:relative; margin:4px 0 24px;
+      font:700 clamp(1.1rem,2.8vw,1.6rem)/1 "Nunito",sans-serif; color:#fff; letter-spacing:.01em;
+      padding:14px 56px; background:var(--olive);
+      clip-path:polygon(0 0,100% 0,95% 50%,100% 100%,0 100%,5% 50%);
+      animation:pop .6s .8s cubic-bezier(.3,1.6,.5,1) both;
+    }
+    @keyframes pop{from{opacity:0; transform:scale(.6)}}
+
+    .items{display:grid; grid-template-columns:1.15fr 1fr .85fr 1.05fr; align-items:end; gap:clamp(6px,2vw,24px); max-width:760px; margin:0 auto 26px}
+    .item{}
+    .item:nth-child(3){align-self:start}
+    .item svg{width:100%; height:auto; display:block}
+    @media (max-width:560px){ .items{grid-template-columns:1fr 1fr; max-width:340px} }
+
+    .swash{
+      position:relative; isolation:isolate; max-width:620px; margin:0 auto 26px;
+      padding:24px clamp(30px,6vw,52px); color:#fff; font-weight:800;
+      font-size:clamp(.95rem,4.3vw,1.8rem); line-height:1.35;
+    }
+    .swash::before{
+      content:""; position:absolute; inset:0; z-index:-1; background:var(--olive);
+      border-radius:46% 12% 38% 10% / 18% 44% 12% 36%; filter:url(#rough);
+    }
+    .swash .hl{color:var(--gold)}
+    .swash .tick{position:absolute; color:#fff; width:22px; opacity:.85}
+    .swash .tick--l{left:8px; top:40%}
+    .swash .tick--r{right:8px; top:40%; transform:scaleX(-1)}
+
+    .slogan{font-size:clamp(1.4rem,3.6vw,2.2rem); color:var(--olive); font-weight:800; letter-spacing:.03em; text-transform:uppercase; margin:0}
+
+    /* ---------- atgalinis skaičiavimas ---------- */
+    .countdown{margin:18px auto 0; max-width:440px}
+    .cd{
+      background:var(--olive-dark); color:#fff; border-radius:var(--radius); padding:20px 22px;
+      display:flex; align-items:center; gap:18px; position:relative; overflow:hidden;
+    }
+    .cd--b{background:var(--brown)}
+    .cd::after{content:""; position:absolute; right:-30px; bottom:-30px; width:120px; height:120px; border-radius:50%; background:rgba(255,255,255,.07)}
+    .cd-num{font:800 clamp(2.4rem,6vw,3.4rem)/1 "Baloo 2",sans-serif; min-width:2ch; text-align:center; color:var(--gold)}
+    .cd-txt{font-weight:700; line-height:1.3}
+    .cd-txt small{display:block; font-weight:600; opacity:.8; font-size:.85rem; margin-top:4px}
+    .cd-bar{position:absolute; left:0; bottom:0; height:5px; background:var(--gold); border-radius:0 4px 4px 0; transition:width 1.4s ease}
+
+    /* ---------- sekcijos ---------- */
+    section{padding:clamp(56px,9vw,96px) 0}
+    .eyebrow{display:block; color:var(--tan); font-size:1.6rem; margin-bottom:2px; transform:rotate(-2deg)}
+    .h2{font-size:clamp(2rem,5vw,3.1rem); color:var(--olive-dark)}
+    .h2 em{font-style:normal; color:var(--brown); position:relative; white-space:nowrap}
+    .h2 em::after{
+      content:""; position:absolute; left:-4px; right:-4px; bottom:.02em; height:.32em; z-index:-1;
+      background:var(--sand); border-radius:40% 10% 50% 10%; opacity:.7;
+    }
+    .lead{font-size:clamp(1.05rem,2vw,1.2rem); color:var(--ink-soft); max-width:62ch}
+
+    .about{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,64px); align-items:center}
+    .about p{margin:0 0 1em}
+    .about .big{font-size:1.2rem; color:var(--ink)}
+    .note{
+      position:relative; background:#fffaf0; padding:28px 26px 24px; border-radius:6px;
+      transform:rotate(2deg); box-shadow:0 18px 40px -22px rgba(74,58,40,.55);
+    }
+    .note::before{ /* lipni juostelė */
+      content:""; position:absolute; top:-14px; left:50%; width:110px; height:28px; transform:translateX(-50%) rotate(-3deg);
+      background:rgba(196,138,74,.45);
+    }
+    .note h3{font-family:"Caveat",cursive; font-size:2rem; color:var(--brown); margin-bottom:6px}
+    .note ul{list-style:none; padding:0; margin:0}
+    .note li{padding:8px 0 8px 34px; position:relative; border-bottom:1.5px dashed rgba(139,90,43,.25); font-weight:600}
+    .note li:last-child{border:0}
+    .note li svg{position:absolute; left:0; top:10px; width:22px; height:22px; color:var(--olive)}
+    @media (max-width:820px){ .about{grid-template-columns:1fr} .note{transform:rotate(1deg)} }
+
+    /* žingsniai */
+    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:40px; counter-reset:s; position:relative}
+    .steps::before{
+      content:""; position:absolute; top:54px; left:16%; right:16%; border-top:3px dashed var(--sand); z-index:0;
+    }
+    .step{position:relative; z-index:1; text-align:center; padding:0 10px}
+    .step-ico{
+      width:108px; height:108px; margin:0 auto 16px; border-radius:50%; display:grid; place-items:center;
+      background:var(--card); box-shadow:inset 0 0 0 4px var(--olive), 0 10px 24px -14px rgba(74,58,40,.6);
+      transition:transform .35s cubic-bezier(.3,1.6,.5,1);
+    }
+    .step:hover .step-ico{transform:rotate(-8deg) scale(1.06)}
+    .step-ico svg{width:52px; height:52px; color:var(--brown)}
+    .step-date{display:inline-block; background:var(--olive); color:#fff; font-weight:800; font-size:.85rem; padding:4px 12px; border-radius:99px; margin-bottom:10px}
+    .step-date--b{background:var(--brown)}
+    .step h3{font-size:1.5rem; color:var(--olive-dark); margin-bottom:6px}
+    .step p{margin:0; color:var(--ink-soft)}
+    @media (max-width:760px){ .steps{grid-template-columns:1fr; gap:34px} .steps::before{display:none} }
+
+    /* ką nešti – apverčiamos kortelės */
+    .what{background:var(--olive-dark); color:#f4ecdc; position:relative}
+    .what::before,.what::after{
+      content:""; position:absolute; left:0; right:0; height:28px; background:var(--paper);
+    }
+    .what::before{top:-1px; clip-path:polygon(0 0,100% 0,100% 30%,90% 70%,80% 35%,70% 80%,60% 40%,50% 75%,40% 30%,30% 70%,20% 35%,10% 75%,0 40%)}
+    .what::after{bottom:-1px; clip-path:polygon(0 100%,100% 100%,100% 70%,90% 30%,80% 65%,70% 20%,60% 60%,50% 25%,40% 70%,30% 30%,20% 65%,10% 25%,0 60%)}
+    .what .h2{color:#fff}
+    .what .h2 em{color:var(--gold)}
+    .what .h2 em::after{background:rgba(255,255,255,.14)}
+    .what .lead{color:#d9d2bd}
+    .what .eyebrow{color:var(--sand)}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-top:30px; border-radius:var(--radius); overflow:hidden; background:rgba(255,255,255,.12); box-shadow:0 24px 50px -28px rgba(0,0,0,.6)}
+    .flip{perspective:900px; min-height:200px; cursor:pointer; background:none; border:0; padding:0; font:inherit; color:inherit; text-align:left}
+    .flip-in{position:relative; width:100%; height:100%; min-height:200px; transition:transform .7s cubic-bezier(.3,1.3,.5,1); transform-style:preserve-3d}
+    .flip:hover .flip-in,.flip:focus-visible .flip-in,.flip.is-flipped .flip-in{transform:rotateY(180deg)}
+    .face{
+      position:absolute; inset:0; border-radius:4px; padding:24px; backface-visibility:hidden;
+      display:flex; flex-direction:column; justify-content:space-between;
+    }
+    .face--front{background:var(--card); color:var(--ink)}
+    .face--front svg{width:54px; height:54px; color:var(--olive)}
+    .face--front h3{font-size:1.5rem; color:var(--olive-dark)}
+    .face--front p{margin:0; color:var(--ink-soft); font-size:.95rem}
+    .face--back{background:var(--tan); color:#fff; transform:rotateY(180deg); justify-content:center}
+    .face--back .hand{font-size:1.9rem; line-height:1.15}
+    .face--back small{display:block; margin-top:10px; font-weight:700; opacity:.9}
+    .flip:nth-child(3n+2) .face--back{background:var(--olive-soft)}
+    .flip:nth-child(3n) .face--back{background:var(--brown)}
+    .tap-hint{font-size:.8rem; font-weight:800; color:var(--tan); letter-spacing:.06em; text-transform:uppercase}
+    @media (max-width:860px){ .cards{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:520px){
+      .face{padding:16px}
+      .face--front svg{width:42px; height:42px}
+      .face--front h3{font-size:1.15rem}
+      .face--front p{font-size:.85rem}
+      .face--back .hand{font-size:1.4rem}
+    }
+
+    .nope{margin-top:40px; display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+    .nope b{margin-right:6px; color:var(--gold)}
+    .chip{padding:8px 14px; border-radius:99px; background:rgba(255,255,255,.08); font-weight:600}
+
+    /* finalas */
+    .finale{text-align:center; padding-bottom:110px}
+    .finale .big-slogan{font-size:clamp(2.2rem,7vw,4.6rem); color:var(--olive); font-weight:800; text-transform:uppercase; letter-spacing:.02em; line-height:1.02; margin:0 0 10px}
+    .finale .big-slogan span{color:var(--brown)}
+    .finale p{color:var(--ink-soft); margin:0 auto 28px; max-width:52ch}
+
+    footer{padding:28px 0 40px; border-top:2px dashed var(--sand); font-size:.92rem; color:var(--ink-soft)}
+    footer .wrap{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    footer a{color:var(--olive-dark); font-weight:700}
+
+    /* atsiradimas slenkant */
+    .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+    .reveal.in{opacity:1; transform:none}
+    .reveal[data-d="1"]{transition-delay:.12s} .reveal[data-d="2"]{transition-delay:.24s}
+
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none !important; transition:none !important}
+      .reveal{opacity:1; transform:none}
+      .sparks path{stroke-dashoffset:0}
+    }
+  </style>
+</head>
+<body>
+  <!-- SVG filtras ir simboliai -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter>
+      <symbol id="branch" viewBox="0 0 120 230">
+        <path d="M62 228C56 170 72 110 58 8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <g fill="currentColor">
+          <ellipse cx="40" cy="190" rx="22" ry="9" transform="rotate(-30 40 190)"/>
+          <ellipse cx="86" cy="168" rx="22" ry="9" transform="rotate(28 86 168)" opacity=".85"/>
+          <ellipse cx="42" cy="136" rx="21" ry="8.5" transform="rotate(-34 42 136)" opacity=".9"/>
+          <ellipse cx="88" cy="112" rx="20" ry="8" transform="rotate(30 88 112)"/>
+          <ellipse cx="40" cy="80" rx="19" ry="8" transform="rotate(-36 40 80)" opacity=".85"/>
+          <ellipse cx="80" cy="56" rx="17" ry="7" transform="rotate(34 80 56)"/>
+          <ellipse cx="50" cy="26" rx="14" ry="6" transform="rotate(-40 50 26)" opacity=".9"/>
+        </g>
+      </symbol>
+      <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2A5.2 5.2 0 0 1 12 6.2a5.2 5.2 0 0 1 9.6 5.6C19.5 16.4 12 21 12 21z"/></symbol>
+    </defs>
+  </svg>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" style="padding-top:10px">
+      <div class="wrap">
+        <div class="poster">
+          <svg class="branch branch--tl" aria-hidden="true"><use href="#branch"/></svg>
+          <svg class="branch branch--tr" aria-hidden="true"><use href="#branch"/></svg>
+          <svg class="branch branch--bl" aria-hidden="true"><use href="#branch"/></svg>
+
+          <svg class="sparks" viewBox="0 0 60 26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true">
+            <path d="M14 22 6 10"/><path d="M30 20V3"/><path d="M46 22l8-12"/>
+          </svg>
+
+          <h1 class="title" aria-label="Mainytuvės">
+            <span aria-hidden="true" style="--i:0;--y:.45em;--r:-15deg">M</span>
+            <span aria-hidden="true" style="--i:1;--y:.29em;--r:-12deg">A</span>
+            <span aria-hidden="true" style="--i:2;--y:.16em;--r:-9deg">I</span>
+            <span aria-hidden="true" style="--i:3;--y:.07em;--r:-6deg">N</span>
+            <span aria-hidden="true" style="--i:4;--y:.02em;--r:-3deg">Y</span>
+            <span aria-hidden="true" style="--i:5;--y:0em;--r:0deg">T</span>
+            <span aria-hidden="true" style="--i:6;--y:.02em;--r:3deg">U</span>
+            <span aria-hidden="true" style="--i:7;--y:.07em;--r:6deg">V</span>
+            <span aria-hidden="true" style="--i:8;--y:.16em;--r:9deg">Ė</span>
+            <span aria-hidden="true" style="--i:9;--y:.29em;--r:12deg">S</span>
+          </h1>
+
+          <div class="ribbon">Lapkričio 20 d.</div>
+
+          <div class="items" aria-label="Daiktai mainams">
+            <!-- dėžė su puodeliu ir knygomis -->
+            <div class="item" role="img" aria-label="Dėžė su puodeliu ir knygomis">
+              <svg viewBox="0 0 180 150">
+                <rect x="96" y="14" width="24" height="76" rx="3" fill="#8b5a2b" transform="rotate(8 108 52)"/>
+                <rect x="118" y="24" width="20" height="66" rx="3" fill="#6b4423" transform="rotate(14 128 57)"/>
+                <path d="M101 24h20" stroke="#d9b98a" stroke-width="3" transform="rotate(8 108 52)"/>
+                <rect x="40" y="34" width="44" height="48" rx="7" fill="#5f6f3c"/>
+                <path d="M84 44c16 0 16 26 0 26" fill="none" stroke="#5f6f3c" stroke-width="7"/>
+                <ellipse cx="62" cy="36" rx="22" ry="5" fill="#45522a"/>
+                <path d="M14 66h152l-10 74H24z" fill="#c48a4a"/>
+                <path d="M14 66 2 88l30 4 6-26zM166 66l12 22-30 4-6-26z" fill="#a8743c"/>
+                <path d="M14 66h152" stroke="#8b5a2b" stroke-width="3"/>
+                <use href="#heart" x="74" y="92" width="32" height="32" color="#45522a"/>
+              </svg>
+            </div>
+            <!-- megztinis -->
+            <div class="item" role="img" aria-label="Žalias megztinis su širdele">
+              <svg viewBox="0 0 160 140">
+                <path d="M52 16q28 14 56 0l34 20 14 66q-8 8-24 4l-8-40-2 56q-42 10-84 0l-2-56-8 40q-16 4-24-4l14-66z" fill="#869659" stroke="#5f6f3c" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M56 18q24 16 48 0" fill="none" stroke="#5f6f3c" stroke-width="5" stroke-linecap="round"/>
+                <path d="M38 116q42 10 84 0" fill="none" stroke="#5f6f3c" stroke-width="7"/>
+                <path d="M10 96q8 6 22 4M150 96q-8 6-22 4" stroke="#5f6f3c" stroke-width="5" fill="none"/>
+                <path d="M70 32v6m10-4v6m10-6v6" stroke="#5f6f3c" stroke-width="2" stroke-linecap="round"/>
+                <use href="#heart" x="68" y="54" width="24" height="24" color="#45522a"/>
+              </svg>
+            </div>
+            <!-- rankinė -->
+            <div class="item" role="img" aria-label="Medžiaginis krepšys su širdele">
+              <svg viewBox="0 0 120 150">
+                <path d="M38 54q0-44 22-44t22 44" fill="none" stroke="#8b5a2b" stroke-width="7" stroke-linecap="round"/>
+                <path d="M16 50h88l6 92q-50 8-100 0z" fill="#b8763c"/>
+                <path d="M16 50h88" stroke="#8b5a2b" stroke-width="4"/>
+                <use href="#heart" x="40" y="80" width="40" height="40" color="#5f6f3c"/>
+              </svg>
+            </div>
+            <!-- sulankstyti rūbai -->
+            <div class="item" role="img" aria-label="Krūvelė sulankstytų rūbų">
+              <svg viewBox="0 0 160 150">
+                <rect x="10" y="112" width="140" height="30" rx="9" fill="#45522a"/>
+                <rect x="14" y="86" width="132" height="28" rx="9" fill="#8b5a2b"/>
+                <rect x="12" y="60" width="136" height="28" rx="9" fill="#d9b98a"/>
+                <rect x="16" y="28" width="128" height="34" rx="10" fill="#5f6f3c"/>
+                <path d="M24 127h112M26 100h108M24 74h112M28 46h104" stroke="rgba(0,0,0,.18)" stroke-width="2" stroke-dasharray="6 6"/>
+                <g transform="translate(80 45)">
+                  <g fill="#fff"><circle cx="0" cy="-8" r="5"/><circle cx="7.6" cy="-2.5" r="5"/><circle cx="4.7" cy="6.5" r="5"/><circle cx="-4.7" cy="6.5" r="5"/><circle cx="-7.6" cy="-2.5" r="5"/></g>
+                  <circle r="3.6" fill="#f0c96e"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="swash">
+            <svg class="tick tick--l" viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 6l12 6M4 24l12-6"/></svg>
+            <svg class="tick tick--r" viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 6l12 6M4 24l12-6"/></svg>
+            Kviečiame nuo šiandien<br>
+            <span class="hl">iki lapkričio 6 dienos</span><br>
+            nešti nenaudojamus<br>
+            geros būklės daiktus ir rūbus,<br>
+            o <span class="hl">lapkričio 20 d.</span> atvykite<br>
+            ir raskite ką nors sau!
+          </div>
+
+          <p class="slogan">Suteikime antrą šansą daiktams!</p>
+        </div>
+
+        <div class="countdown" aria-live="polite">
+          <div class="cd cd--b">
+            <div class="cd-num" id="cd2">–</div>
+            <div class="cd-txt" id="cd2t">dienų iki mainytuvių<small>lapkričio 20 d., Stakliškėse</small></div>
+            <div class="cd-bar" id="cd2b" style="width:0"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= APIE ================= -->
+    <section id="apie">
+      <div class="wrap about">
+        <div class="reveal">
+          <span class="eyebrow hand">kas čia vyksta?</span>
+          <h2 class="h2">Spinta pilna, o dėvėti <em>nėra ką?</em></h2>
+          <p class="big" style="margin-top:20px">Pažįstama situacija. Spintoje kabo megztinis, kuris „kada nors pravers“, lentynoje dulka perskaitytos knygos, o virtuvės spintelėje slepiasi dešimtas puodelis. Tuo metu kažkam Stakliškėse kaip tik jų ir trūksta.</p>
+          <p><strong>Mainytuvės</strong> – tai bendruomenės susitikimas, kuriame daiktai keliauja iš rankų į rankas be pinigų. Atneši tai, kas tau nebereikalinga, o išsineši tai, kas pradžiugins. Jokių kainų, jokių derybų – tik geros nuotaikos, pokalbiai ir smagus jausmas, kad tavo senas daiktas kažkam taps nauju.</p>
+          <p>Taip taupome pinigus, mažiname atliekų kalnus ir tiesiog geriau pažįstame vieni kitus. Paprasta, tvaru ir labai mūsiška.</p>
+        </div>
+        <aside class="note reveal" data-d="1">
+          <h3>Trumpai:</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Daiktus nešame <b>iki lapkričio 6 d.</b></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>Mainytuvės vyks <b>lapkričio 20 d.</b></li>
+            <!-- TODO: patikslinkite tikslią vietą ir laiką -->
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Vieta: <b>Stakliškės</b> (tiksli vieta bus paskelbta)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9.5c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5c0 3-6 2-6 5h6M12 16.5v.5"/></svg>Kaina: <b>nemokamai</b>, visiems</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= KAIP ================= -->
+    <section id="kaip" style="padding-top:0">
+      <div class="wrap">
+        <div class="reveal" style="text-align:center">
+          <span class="eyebrow hand">trys paprasti žingsniai</span>
+          <h2 class="h2">Kaip <em>dalyvauti?</em></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg></div>
+            <span class="step-date">dabar</span>
+            <h3>Peržvelk namus</h3>
+            <p>Atsirink rūbus ir daiktus, kurie tau nebereikalingi, bet dar puikiai tarnautų kitiems.</p>
+          </div>
+          <div class="step reveal" data-d="1">
+            <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5v10l-9 5-9-5z"/><path d="M3 9l9 5 9-5M12 14v10"/></svg></div>
+            <span class="step-date">iki lapkričio 6 d.</span>
+            <h3>Atnešk</h3>
+            <p>Atnešk juos švarius ir tvarkingus. Mes viską surūšiuosime ir paruošime mainams.</p>
+          </div>
+          <div class="step reveal" data-d="2">
+            <div class="step-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#heart"/></svg></div>
+            <span class="step-date step-date--b">lapkričio 20 d.</span>
+            <h3>Mainykis!</h3>
+            <p>Ateik, apžiūrėk, pasimatuok ir išsirink tai, kas tave pradžiugins. Pakviesk ir visą bendruomenę!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KĄ NEŠTI ================= -->
+    <section class="what" id="ka-nesti">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow hand">ko laukiame</span>
+          <h2 class="h2">Ką galima <em>atnešti?</em></h2>
+          <p class="lead" style="margin-top:12px">Užvesk pelę ant kortelės arba paliesk ją ir pažiūrėk, koks antras gyvenimas laukia tavo daikto.</p>
+        </div>
+        <div class="cards">
+          <button class="flip reveal" type="button">
+            <div class="flip-in">
+              <div class="face face--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>
+                <div><h3>Rūbai ir avalynė</h3><p>Suaugusiųjų ir vaikų, visiems sezonams</p></div>
+                <span class="tap-hint">apversk ↻</span>
+              </div>
+              <div class="face face--back"><span class="hand">Tavo megztinis – kažkieno šilta žiema.</span></div>
+            </div>
+          </button>
+          <button class="flip reveal" type="button" data-d="1">
+            <div class="flip-in">
+              <div class="face face--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+                <div><h3>Knygos</h3><p>Romanai, vaikiškos, žurnalai, kulinarinės</p></div>
+                <span class="tap-hint">apversk ↻</span>
+              </div>
+              <div class="face face--back"><span class="hand">Perskaityta istorija nori būti perskaityta dar kartą.</span></div>
+            </div>
+          </button>
+          <button class="flip reveal" type="button" data-d="2">
+            <div class="flip-in">
+              <div class="face face--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h12v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM16 11h2a2.5 2.5 0 0 1 0 5h-2M8 3c-1 1 1 2 0 3M12 3c-1 1 1 2 0 3"/></svg>
+                <div><h3>Indai ir puodeliai</h3><p>Sveiki, be įskilimų ir nuoskilų</p></div>
+                <span class="tap-hint">apversk ↻</span>
+              </div>
+              <div class="face face--back"><span class="hand">Dešimtas tavo puodelis – kažkieno pirmoji rytinė kava naujuose namuose.</span></div>
+            </div>
+          </button>
+          <button class="flip reveal" type="button">
+            <div class="flip-in">
+              <div class="face face--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="5.5" r="2.2"/><circle cx="17" cy="5.5" r="2.2"/><circle cx="12" cy="10" r="5"/><path d="M8 14.5c-2 1.2-3 3-3 5.5h14c0-2.5-1-4.3-3-5.5"/><circle cx="10.3" cy="9.3" r=".6" fill="currentColor"/><circle cx="13.7" cy="9.3" r=".6" fill="currentColor"/></svg>
+                <div><h3>Žaislai ir žaidimai</h3><p>Pilni komplektai, švarūs ir saugūs</p></div>
+                <span class="tap-hint">apversk ↻</span>
+              </div>
+              <div class="face face--back"><span class="hand">Užaugęs meškiukas ieško naujo draugo.</span></div>
+            </div>
+          </button>
+          <button class="flip reveal" type="button" data-d="1">
+            <div class="flip-in">
+              <div class="face face--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 13H6.2zM9 8V6a3 3 0 0 1 6 0v2"/></svg>
+                <div><h3>Krepšiai ir aksesuarai</h3><p>Rankinės, šalikai, kepurės, papuošalai</p></div>
+                <span class="tap-hint">apversk ↻</span>
+              </div>
+              <div class="face face--back"><span class="hand">Viena rankinė – daugybė naujų kelionių.</span></div>
+            </div>
+          </button>
+          <button class="flip reveal" type="button" data-d="2">
+            <div class="flip-in">
+              <div class="face face--front">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5"/></svg>
+                <div><h3>Namų jaukumas</h3><p>Dekoras, tekstilė, žvakidės, smulkūs daiktai</p></div>
+                <span class="tap-hint">apversk ↻</span>
+              </div>
+              <div class="face face--back"><span class="hand">Tavo vaza gali tapti kažkieno svetainės akcentu.</span></div>
+            </div>
+          </button>
+        </div>
+        <div class="nope reveal">
+          <b>Prašome nenešti:</b>
+          <span class="chip">suplyšusių ar dėmėtų rūbų</span>
+          <span class="chip">sugedusios elektronikos</span>
+          <span class="chip">apatinio trikotažo</span>
+          <span class="chip">didelių baldų</span>
+          <span class="chip">maisto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FINALAS ================= -->
+    <section class="finale">
+      <div class="wrap reveal">
+        <p class="big-slogan">Suteikime antrą šansą <span>daiktams!</span></p>
+        <p>Susitikime lapkričio 20 d. Stakliškėse. Atsineškite gerą nuotaiką, maišelį naujiems radiniams ir draugų.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Mainytuvės Stakliškėse · 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      /* --- atsiradimas slenkant --- */
+      var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      },{threshold:.15}) : null;
+      document.querySelectorAll('.reveal').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); });
+
+      /* --- atgalinis skaičiavimas --- */
+      var DAY = 864e5;
+      var start = new Date(2026,9,1);              // akcijos pradžia (juostelės progresui)
+      var eventDay = new Date(2026,10,20,0,0);     // lapkričio 20 d.
+      function daysTo(d){ return Math.max(0, Math.ceil((d - new Date())/DAY)); }
+      function word(n){ var t=n%10, h=n%100; if(t===1&&h!==11) return 'diena'; if(t===0||(h>10&&h<20)) return 'dienų'; return 'dienos'; }
+      function pct(d){ return Math.min(100, Math.max(0, (new Date()-start)/(d-start)*100)); }
+      function tick(){
+        var b = daysTo(eventDay), now = new Date();
+        var cd2 = document.getElementById('cd2'), cd2t = document.getElementById('cd2t');
+        var endOfEvent = new Date(2026,10,21);
+        if(now >= endOfEvent){ cd2.textContent='♥'; cd2t.innerHTML='Mainytuvės įvyko<small>iki kitų susitikimų!</small>'; }
+        else if(now >= eventDay){ cd2.textContent='!'; cd2t.innerHTML='Mainytuvės jau šiandien!<small>lapkričio 20 d., Stakliškėse</small>'; }
+        else { cd2.textContent=b; cd2t.innerHTML=word(b)+' iki mainytuvių<small>lapkričio 20 d., Stakliškėse</small>'; }
+        document.getElementById('cd2b').style.width = pct(eventDay)+'%';
+      }
+      tick(); setInterval(tick, 60000);
+
+      /* --- kortelių apvertimas liečiant --- */
+      document.querySelectorAll('.flip').forEach(function(f){
+        f.addEventListener('click', function(){ f.classList.toggle('is-flipped'); });
+      });
+
+    })();
+  </script>
+</body>
+</html>
