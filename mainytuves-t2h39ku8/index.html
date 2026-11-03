@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mainytuvės Stakliškėse – lapkričio 20 d.</title>
-  <meta name="description" content="Mainytuvės Stakliškėse: iki lapkričio 6 d. neškite nenaudojamus geros būklės daiktus ir rūbus, o lapkričio 20 d. – mainykitės! Suteikime antrą šansą daiktams.">
+  <meta name="description" content="Mainytuvės Stakliškėse: lapkričio 9–18 d. neškite nenaudojamus geros būklės daiktus ir rūbus į Stakliškių gimnaziją, o lapkričio 20 d. 15–18 val. Stakliškių kultūros ir laisvalaikio centre – mainykitės! Suteikime antrą šansą daiktams.">
   <meta name="theme-color" content="#f1e8d8">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,11 +69,10 @@
       display:flex; justify-content:center; flex-wrap:nowrap;
     }
     .title span{
-      display:inline-block; --y:0em; --r:0deg;
-      transform:translateY(var(--y)) rotate(var(--r));
+      display:inline-block;
       animation:drop .7s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(var(--i) * 60ms);
     }
-    @keyframes drop{from{opacity:0; transform:translateY(-1.2em) rotate(-20deg)}}
+    @keyframes drop{from{opacity:0; transform:translateY(-1.2em)}}
 
     .ribbon{
       display:inline-block; position:relative; margin:4px 0 24px;
@@ -83,6 +82,8 @@
       animation:pop .6s .8s cubic-bezier(.3,1.6,.5,1) both;
     }
     @keyframes pop{from{opacity:0; transform:scale(.6)}}
+    .venue{margin:-10px 0 26px; font:800 clamp(1.05rem,2.6vw,1.45rem)/1.3 "Nunito",sans-serif; color:var(--olive-dark); animation:pop .6s 1s cubic-bezier(.3,1.6,.5,1) both}
+    .venue small{display:block; font-weight:700; font-size:.8em; color:var(--ink-soft)}
 
     .items{display:grid; grid-template-columns:1.15fr 1fr .85fr 1.05fr; align-items:end; gap:clamp(6px,2vw,24px); max-width:760px; margin:0 auto 26px}
     .item{}
@@ -131,8 +132,7 @@
     .lead{font-size:clamp(1.05rem,2vw,1.2rem); color:var(--ink-soft); max-width:62ch}
 
     .about{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,64px); align-items:center}
-    .about p{margin:0 0 1em}
-    .about .big{font-size:1.2rem; color:var(--ink)}
+    .about p{margin:0 0 1em; font-size:1.15rem; color:var(--ink)}
     .note{
       position:relative; background:#fffaf0; padding:28px 26px 24px; border-radius:6px;
       transform:rotate(2deg); box-shadow:0 18px 40px -22px rgba(74,58,40,.55);
@@ -166,6 +166,26 @@
     .step h3{font-size:1.5rem; color:var(--olive-dark); margin-bottom:6px}
     .step p{margin:0; color:var(--ink-soft)}
     @media (max-width:760px){ .steps{grid-template-columns:1fr; gap:34px} .steps::before{display:none} }
+
+    /* organizatoriai ir rėmėjai */
+    .org{margin-top:56px; text-align:center}
+    .org-by{font-size:clamp(1.15rem,2.4vw,1.4rem); color:var(--ink-soft); margin:0 0 34px}
+    .org-by b{display:block; font:800 clamp(1.6rem,4vw,2.2rem)/1.15 "Baloo 2",sans-serif; color:var(--olive-dark)}
+    .sponsors-t{font-family:"Caveat",cursive; font-size:1.8rem; color:var(--tan); margin:0 0 14px}
+    .sponsors{list-style:none; padding:0; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:18px; max-width:900px}
+    .sponsors li{background:var(--card); border-radius:18px; padding:18px 22px; width:180px; min-height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; box-shadow:0 14px 30px -20px rgba(74,58,40,.55)}
+    .sponsors img{max-width:100%; max-height:110px; object-fit:contain; display:block}
+    .sponsors img[src$=".png"]{width:110px; height:110px}
+    .sponsors span{font-weight:800; font-size:.9rem; color:var(--olive-dark); line-height:1.2}
+    @media (max-width:520px){ .sponsors li{width:calc(50% - 9px); padding:14px} .sponsors img{max-height:78px} }
+
+    /* programa */
+    .program{max-width:720px; margin:30px auto 0; background:var(--card); border-radius:var(--radius); padding:28px clamp(18px,4vw,36px); border:3px dashed var(--sand); text-align:center}
+    .program .soon{font:700 clamp(1.8rem,4vw,2.4rem)/1.1 "Caveat",cursive; color:var(--brown); margin:0 0 6px}
+    .program p{margin:0; color:var(--ink-soft)}
+    .prog-rows{list-style:none; padding:0; margin:22px 0 0; text-align:left}
+    .prog-rows li{display:flex; gap:16px; padding:12px 0; border-top:1.5px dashed rgba(139,90,43,.25); color:var(--ink-soft); font-weight:600}
+    .prog-rows time{font-weight:800; color:var(--olive-dark); min-width:5.5ch}
 
     /* ką nešti – apverčiamos kortelės */
     .what{background:var(--olive-dark); color:#f4ecdc; position:relative}
@@ -267,19 +287,20 @@
           </svg>
 
           <h1 class="title" aria-label="Mainytuvės">
-            <span aria-hidden="true" style="--i:0;--y:.45em;--r:-15deg">M</span>
-            <span aria-hidden="true" style="--i:1;--y:.29em;--r:-12deg">A</span>
-            <span aria-hidden="true" style="--i:2;--y:.16em;--r:-9deg">I</span>
-            <span aria-hidden="true" style="--i:3;--y:.07em;--r:-6deg">N</span>
-            <span aria-hidden="true" style="--i:4;--y:.02em;--r:-3deg">Y</span>
-            <span aria-hidden="true" style="--i:5;--y:0em;--r:0deg">T</span>
-            <span aria-hidden="true" style="--i:6;--y:.02em;--r:3deg">U</span>
-            <span aria-hidden="true" style="--i:7;--y:.07em;--r:6deg">V</span>
-            <span aria-hidden="true" style="--i:8;--y:.16em;--r:9deg">Ė</span>
-            <span aria-hidden="true" style="--i:9;--y:.29em;--r:12deg">S</span>
+            <span aria-hidden="true" style="--i:0">M</span>
+            <span aria-hidden="true" style="--i:1">A</span>
+            <span aria-hidden="true" style="--i:2">I</span>
+            <span aria-hidden="true" style="--i:3">N</span>
+            <span aria-hidden="true" style="--i:4">Y</span>
+            <span aria-hidden="true" style="--i:5">T</span>
+            <span aria-hidden="true" style="--i:6">U</span>
+            <span aria-hidden="true" style="--i:7">V</span>
+            <span aria-hidden="true" style="--i:8">Ė</span>
+            <span aria-hidden="true" style="--i:9">S</span>
           </h1>
 
           <div class="ribbon">Lapkričio 20 d.</div>
+          <p class="venue">Stakliškių kultūros ir laisvalaikio centre<small>15:00–18:00 val.</small></p>
 
           <div class="items" aria-label="Daiktai mainams">
             <!-- dėžė su puodeliu ir knygomis -->
@@ -336,10 +357,11 @@
           <div class="swash">
             <svg class="tick tick--l" viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 6l12 6M4 24l12-6"/></svg>
             <svg class="tick tick--r" viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 6l12 6M4 24l12-6"/></svg>
-            Kviečiame nuo šiandien<br>
-            <span class="hl">iki lapkričio 6 dienos</span><br>
+            Kviečiame<br>
+            <span class="hl">nuo lapkričio 9 iki 18 dienos</span><br>
             nešti nenaudojamus<br>
-            geros būklės daiktus ir rūbus,<br>
+            geros būklės daiktus ir rūbus<br>
+            į Stakliškių gimnazijos 1 aukšto fojė,<br>
             o <span class="hl">lapkričio 20 d.</span> atvykite<br>
             ir raskite ką nors sau!
           </div>
@@ -350,7 +372,7 @@
         <div class="countdown" aria-live="polite">
           <div class="cd cd--b">
             <div class="cd-num" id="cd2">–</div>
-            <div class="cd-txt" id="cd2t">dienų iki mainytuvių<small>lapkričio 20 d., Stakliškėse</small></div>
+            <div class="cd-txt" id="cd2t">dienų iki mainytuvių<small>lapkričio 20 d., 15–18 val., Stakliškių KLC</small></div>
             <div class="cd-bar" id="cd2b" style="width:0"></div>
           </div>
         </div>
@@ -363,17 +385,17 @@
         <div class="reveal">
           <span class="eyebrow hand">kas čia vyksta?</span>
           <h2 class="h2">Spinta pilna, o dėvėti <em>nėra ką?</em></h2>
-          <p class="big" style="margin-top:20px">Pažįstama situacija. Spintoje kabo megztinis, kuris „kada nors pravers“, lentynoje dulka perskaitytos knygos, o virtuvės spintelėje slepiasi dešimtas puodelis. Tuo metu kažkam Stakliškėse kaip tik jų ir trūksta.</p>
+          <p style="margin-top:20px">Pažįstama situacija. Spintoje kabo megztinis, kuris „kada nors pravers“, lentynoje dulka perskaitytos knygos, o virtuvės spintelėje slepiasi dešimtas puodelis. Tuo metu kažkam Stakliškėse kaip tik jų ir trūksta.</p>
           <p><strong>Mainytuvės</strong> – tai bendruomenės susitikimas, kuriame daiktai keliauja iš rankų į rankas be pinigų. Atneši tai, kas tau nebereikalinga, o išsineši tai, kas pradžiugins. Jokių kainų, jokių derybų – tik geros nuotaikos, pokalbiai ir smagus jausmas, kad tavo senas daiktas kažkam taps nauju.</p>
           <p>Taip taupome pinigus, mažiname atliekų kalnus ir tiesiog geriau pažįstame vieni kitus. Paprasta, tvaru ir labai mūsiška.</p>
         </div>
         <aside class="note reveal" data-d="1">
           <h3>Trumpai:</h3>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Daiktus nešame <b>iki lapkričio 6 d.</b></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>Mainytuvės vyks <b>lapkričio 20 d.</b></li>
-            <!-- TODO: patikslinkite tikslią vietą ir laiką -->
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Vieta: <b>Stakliškės</b> (tiksli vieta bus paskelbta)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Daiktus nešame <b>lapkričio 9–18 d.</b> į <b>Stakliškių gimnazijos 1 aukšto fojė</b> (Prienų g. 8, Stakliškės, Prienų rajonas, LT-59370)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>Mainytuvės vyks <b>lapkričio 20 d.</b>, <b>15:00–18:00</b></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Vieta: <b>Stakliškių kultūros ir laisvalaikio centras</b></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V6a2 2 0 0 1 4 0v5M11 10V4a2 2 0 0 1 4 0v6M15 10V6a2 2 0 0 1 4 0v8a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-3l-2.5-4a2 2 0 0 1 3.3-2.2L7 13"/></svg>Neškite tik tai, ką <b>galima pakelti rankomis</b></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9.5c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5c0 3-6 2-6 5h6M12 16.5v.5"/></svg>Kaina: <b>nemokamai</b>, visiems</li>
           </ul>
         </aside>
@@ -396,16 +418,27 @@
           </div>
           <div class="step reveal" data-d="1">
             <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5v10l-9 5-9-5z"/><path d="M3 9l9 5 9-5M12 14v10"/></svg></div>
-            <span class="step-date">iki lapkričio 6 d.</span>
+            <span class="step-date">lapkričio 9–18 d.</span>
             <h3>Atnešk</h3>
-            <p>Atnešk juos švarius ir tvarkingus. Mes viską surūšiuosime ir paruošime mainams.</p>
+            <p>Atnešk juos švarius ir tvarkingus į <b>Stakliškių gimnazijos 1 aukšto fojė</b> (Prienų g. 8, Stakliškės, Prienų rajonas, LT-59370). Nešk tik tai, ką gali pakelti rankomis. Mes viską surūšiuosime ir paruošime mainams.</p>
           </div>
           <div class="step reveal" data-d="2">
             <div class="step-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#heart"/></svg></div>
             <span class="step-date step-date--b">lapkričio 20 d.</span>
             <h3>Mainykis!</h3>
-            <p>Ateik, apžiūrėk, pasimatuok ir išsirink tai, kas tave pradžiugins. Pakviesk ir visą bendruomenę!</p>
+            <p>Ateik 15–18 val. į Stakliškių kultūros ir laisvalaikio centrą, apžiūrėk, pasimatuok ir išsirink tai, kas tave pradžiugins. Pakviesk ir visą bendruomenę!</p>
           </div>
+        </div>
+
+        <div class="org reveal">
+          <p class="org-by">Renginį organizuoja<b>Stakliškių gimnazija</b></p>
+          <p class="sponsors-t">Mūsų rėmėjai ir partneriai</p>
+          <ul class="sponsors">
+            <li><img src="remejai/stakliskes-herbas.gif" alt="Stakliškių herbas"><span>Stakliškių seniūnija</span></li>
+            <li><img src="remejai/kulturos-centras.png" alt="Stakliškių kultūros ir laisvalaikio centras"></li>
+            <li><img src="remejai/lietuviskas-midus.png" alt="Lietuviškas midus, Stakliškės"></li>
+            <li><img src="remejai/norfa.svg" alt="Norfa"></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -485,8 +518,28 @@
           <span class="chip">suplyšusių ar dėmėtų rūbų</span>
           <span class="chip">sugedusios elektronikos</span>
           <span class="chip">apatinio trikotažo</span>
-          <span class="chip">didelių baldų</span>
+          <span class="chip">didelių baldų ir daiktų, kurių negalima pakelti rankomis</span>
           <span class="chip">maisto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAMA ================= -->
+    <section id="programa">
+      <div class="wrap">
+        <div class="reveal" style="text-align:center">
+          <span class="eyebrow hand">lapkričio 20 d., 15:00–18:00</span>
+          <h2 class="h2">Renginio <em>programa</em></h2>
+        </div>
+        <!-- TODO: įrašykite detalią programą vietoj žemiau esančių eilučių -->
+        <div class="program reveal" data-d="1">
+          <p class="soon">Detali programa – jau netrukus!</p>
+          <p>Programą dar ruošiame. Laukite, netrukus ją paskelbsime čia.</p>
+          <ul class="prog-rows">
+            <li><time>15:00</time>Bus paskelbta netrukus</li>
+            <li><time>16:00</time>Bus paskelbta netrukus</li>
+            <li><time>17:00</time>Bus paskelbta netrukus</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -495,7 +548,7 @@
     <section class="finale">
       <div class="wrap reveal">
         <p class="big-slogan">Suteikime antrą šansą <span>daiktams!</span></p>
-        <p>Susitikime lapkričio 20 d. Stakliškėse. Atsineškite gerą nuotaiką, maišelį naujiems radiniams ir draugų.</p>
+        <p>Susitikime lapkričio 20 d. 15–18 val. Stakliškių kultūros ir laisvalaikio centre. Atsineškite gerą nuotaiką, maišelį naujiems radiniams ir draugų.</p>
       </div>
     </section>
   </main>
@@ -526,8 +579,8 @@
         var cd2 = document.getElementById('cd2'), cd2t = document.getElementById('cd2t');
         var endOfEvent = new Date(2026,10,21);
         if(now >= endOfEvent){ cd2.textContent='♥'; cd2t.innerHTML='Mainytuvės įvyko<small>iki kitų susitikimų!</small>'; }
-        else if(now >= eventDay){ cd2.textContent='!'; cd2t.innerHTML='Mainytuvės jau šiandien!<small>lapkričio 20 d., Stakliškėse</small>'; }
-        else { cd2.textContent=b; cd2t.innerHTML=word(b)+' iki mainytuvių<small>lapkričio 20 d., Stakliškėse</small>'; }
+        else if(now >= eventDay){ cd2.textContent='!'; cd2t.innerHTML='Mainytuvės jau šiandien!<small>lapkričio 20 d., 15–18 val., Stakliškių KLC</small>'; }
+        else { cd2.textContent=b; cd2t.innerHTML=word(b)+' iki mainytuvių<small>lapkričio 20 d., 15–18 val., Stakliškių KLC</small>'; }
         document.getElementById('cd2b').style.width = pct(eventDay)+'%';
       }
       tick(); setInterval(tick, 60000);
