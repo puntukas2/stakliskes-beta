@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xn--stakliks-beb25e.lt/sitemap.xml
