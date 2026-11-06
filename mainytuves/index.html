@@ -180,10 +180,10 @@
     .sponsors-t{font-family:"Caveat",cursive; font-size:1.8rem; color:var(--tan); margin:0 0 14px}
     .sponsors{list-style:none; padding:0; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:18px; max-width:900px}
     .sponsors li{background:var(--card); border-radius:18px; padding:18px 22px; width:180px; min-height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; box-shadow:0 14px 30px -20px rgba(74,58,40,.55)}
-    .sponsors img{max-width:100%; max-height:110px; object-fit:contain; display:block}
-    .sponsors img[src$=".png"]{width:110px; height:110px}
+    .sponsors img{width:110px; height:110px; max-width:100%; object-fit:contain; display:block}
+    .sponsors img[src$=".jpg"]{mix-blend-mode:multiply}
     .sponsors span{font-weight:800; font-size:.9rem; color:var(--olive-dark); line-height:1.2}
-    @media (max-width:520px){ .sponsors li{width:calc(50% - 9px); padding:14px} .sponsors img{max-height:78px} }
+    @media (max-width:520px){ .sponsors li{width:calc(50% - 9px); padding:14px} .sponsors img{width:88px; height:88px} }
 
     /* programa */
     .program{max-width:720px; margin:30px auto 0; background:var(--card); border-radius:var(--radius); padding:28px clamp(18px,4vw,36px); border:3px dashed var(--sand); text-align:center}
@@ -444,6 +444,7 @@
             <li><img src="remejai/stakliskes-herbas.gif" alt="Stakliškių herbas"><span>Stakliškių seniūnija</span></li>
             <li><img src="remejai/kulturos-centras.png" alt="Stakliškių kultūros ir laisvalaikio centras"></li>
             <li><img src="remejai/lietuviskas-midus.png" alt="Lietuviškas midus, Stakliškės"></li>
+            <li><img src="remejai/jonuciu-pieno-ukis.jpg" alt="Jonučių pieno ūkis"></li>
           </ul>
         </div>
       </div>
